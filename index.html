@@ -1,7 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mi Web de Anime</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: white;
+    }
+
+    header {
+      background-color: #1f1f1f;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      color: #ff4081;
+    }
+
+    .anime-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .anime-card {
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(255, 64, 129, 0.3);
+      transition: transform 0.3s;
+    }
+
+    .anime-card:hover {
+      transform: scale(1.05);
+    }
+
+    .anime-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .anime-card .info {
+      padding: 15px;
+    }
+
+    .anime-card h3 {
+      margin-top: 0;
+      color: #ff4081;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      margin-top: 10px;
+      background-color: #ff4081;
+      color: white;
+      border: none;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .btn:hover {
+      background-color: #ff1f6d;
+    }
+  </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+
+  <header>
+    <h1>Mi Web de Anime</h1>
+  </header>
+
+  <section class="anime-grid">
+
+    <div class="anime-card">
+      <img src="https://upload.wikimedia.org/wikipedia/en/2/29/Attack_on_Titan_S1_DVD.jpg" alt="Shingeki no Kyojin">
+      <div class="info">
+        <h3>Attack on Titan</h3>
+        <p>En un mundo donde los humanos viven rodeados de muros para protegerse de los titanes gigantes.</p>
+        <a class="btn" href="https://example.com/aot" target="_blank">Ver</a>
+      </div>
+    </div>
+
+    <div class="anime-card">
+      <img src="https://upload.wikimedia.org/wikipedia/en/9/9a/Death_Note_Vol_1.jpg" alt="Death Note">
+      <div class="info">
+        <h3>Death Note</h3>
+        <p>Un estudiante encuentra un cuaderno con el poder de matar a quien escriba su nombre.</p>
+        <a class="btn" href="https://example.com/deathnote" target="_blank">Ver</a>
+      </div>
+    </div>
+
+    <!-- Puedes agregar más animes copiando este bloque -->
+    
+  </section>
+
 </body>
 </html>
