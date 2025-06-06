@@ -18,7 +18,7 @@
       padding: 20px;
       text-align: center;
     }
-
+  
     header h1 {
       margin: 0;
       font-size: 2.5em;
@@ -31,6 +31,7 @@
       color: #cccccc;
     }
 
+    /* Estilos para el formulario de búsqueda */
     #search-form {
       text-align: center;
       margin: 20px 0;
@@ -138,30 +139,127 @@
     <p>Descubre los animes más populares y comienza a verlos ahora.</p>
   </header>
 
+  <!-- Formulario de búsqueda -->
   <form id="search-form" aria-label="Buscar anime">
     <input id="search-input" type="text" placeholder="Buscar anime por título..." aria-label="Buscar anime" />
     <button id="search-btn" type="submit">Buscar</button>
   </form>
 
   <section class="anime-grid" id="anime-grid">
-    <!-- Las tarjetas de anime se insertan aquí -->
+
+    <div class="anime-card" data-title="Attack on Titan">
+      <img src="https://static.wikia.nocookie.net/voiceacting/images/d/df/ShingekiNokyojin.jpg" alt="Póster de Attack on Titan">
+      <div class="info">
+        <h3>Attack on Titan</h3>
+        <p>En un mundo postapocalíptico, la humanidad vive protegida por murallas gigantes para sobrevivir al ataque de enormes titanes devoradores de humanos.</p>
+        <a class="btn" href="https://example.com/aot" target="_blank" rel="noopener noreferrer">Ver</a>
+      </div>
+    </div>
+
+    <div class="anime-card" data-title="Death Note">
+      <img src="https://alfabetajuega.com/hero/2023/06/death-note-anime-suspenso.jpg?width=768&aspect_ratio=16:9&format=nowebp" alt="Póster de Death Note">
+      <div class="info">
+        <h3>Death Note</h3>
+        <p>Light Yagami, un estudiante brillante, descubre una libreta sobrenatural que le permite matar a cualquier persona con solo escribir su nombre en ella.</p>
+        <a class="btn" href="https://example.com/death-note" target="_blank" rel="noopener noreferrer">Ver</a>
+      </div>
+    </div>
+
+<div class="anime-card" data-title="My Hero Academia">
+  <img src="https://www.latercera.com/resizer/8iAcmRzstDL8vLuFzRl-xRCFeWQ=/900x600/smart/cloudfront-us-east-1.images.arcpublishing.com/copesa/6K7NVJFSLFFHNBYHTJZALXSKSY.jpg" alt="My Hero Academia">
+  <div class="info">
+    <h3>My Hero Academia</h3>
+    <p>En un mundo donde la mayoría de la población tiene superpoderes llamados “quirks”, un joven sin poderes sueña con convertirse en el héroe número uno.</p>
+    <a class="btn" href="https://example.com/mha" target="_blank" rel="noopener noreferrer">Ver</a>
+  </div>
+</div>
+
+<div class="anime-card" data-title="One Piece">
+  <img src="https://areajugones.sport.es/wp-content/uploads/2022/06/one-piece-luffy-cerca.jpg" alt="One Piece">
+  <div class="info">
+    <h3>One Piece</h3>
+    <p>Monkey D. Luffy zarpa al mar con el sueño de encontrar el tesoro legendario "One Piece" y convertirse en el Rey de los Piratas.</p>
+    <a class="btn" href="https://example.com/one-piece" target="_blank" rel="noopener noreferrer">Ver</a>
+  </div>
+</div>
+
+<div class="anime-card" data-title="Naruto">
+  <img src="https://cdn.alfabetajuega.com/alfabetajuega/2023/08/naruto-anime.jpg?width=768" alt="Naruto">
+  <div class="info">
+    <h3>Naruto</h3>
+    <p>Naruto Uzumaki es un joven ninja con el sueño de convertirse en el Hokage, el líder más fuerte de su aldea.</p>
+    <a class="btn" href="https://example.com/naruto" target="_blank" rel="noopener noreferrer">Ver</a>
+  </div>
+</div>
+
+<div class="anime-card" data-title="Demon Slayer">
+  <img src="https://i.blogs.es/10fa59/kimetsu-no-yaiba/1366_2000.jpeg" alt="Demon Slayer">
+  <div class="info">
+    <h3>Demon Slayer</h3>
+    <p>Tanjiro Kamado busca venganza contra los demonios que mataron a su familia y curar a su hermana Nezuko, que se ha convertido en uno de ellos.</p>
+    <a class="btn" href="https://example.com/demon-slayer" target="_blank" rel="noopener noreferrer">Ver</a>
+  </div>
+</div>
+
+<div class="anime-card" data-title="Fullmetal Alchemist: Brotherhood">
+  <img src="https://i.blogs.es/92b91c/fullmetal-alchemist-brotherhood/1366_2000.jpeg" alt="Fullmetal Alchemist: Brotherhood">
+  <div class="info">
+    <h3>Fullmetal Alchemist: Brotherhood</h3>
+    <p>Dos hermanos alquimistas buscan la piedra filosofal para recuperar sus cuerpos, perdidos tras intentar una transmutación prohibida.</p>
+    <a class="btn" href="https://example.com/fma-brotherhood" target="_blank" rel="noopener noreferrer">Ver</a>
+  </div>
+</div>
+
+<div class="anime-card" data-title="Tokyo Ghoul">
+  <img src="https://cdn.alfabetajuega.com/alfabetajuega/2021/09/kaneki-tokyo-ghoul.jpg" alt="Tokyo Ghoul">
+  <div class="info">
+    <h3>Tokyo Ghoul</h3>
+    <p>Después de sobrevivir a un ataque de un ghoul, Kaneki se convierte en mitad humano y mitad monstruo, obligado a vivir entre dos mundos.</p>
+    <a class="btn" href="https://example.com/tokyo-ghoul" target="_blank" rel="noopener noreferrer">Ver</a>
+  </div>
+</div>
+
+<div class="anime-card" data-title="Sword Art Online">
+  <img src="https://i.blogs.es/ee44b4/sao/1366_2000.jpg" alt="Sword Art Online">
+  <div class="info">
+    <h3>Sword Art Online</h3>
+    <p>Jugadores atrapados en un videojuego de realidad virtual deben luchar por sus vidas, ya que morir en el juego significa morir en la vida real.</p>
+    <a class="btn" href="https://example.com/sao" target="_blank" rel="noopener noreferrer">Ver</a>
+  </div>
+</div>
+
+<div class="anime-card" data-title="Jujutsu Kaisen">
+  <img src="https://www.latercera.com/resizer/pMebhV7fMJ1UXqIjDCP8Qh97H-Q=/900x600/smart/cloudfront-us-east-1.images.arcpublishing.com/copesa/Y5ZYTCZ2OBHRXBJLDI2ZXPRXWI.jpg" alt="Jujutsu Kaisen">
+  <div class="info">
+    <h3>Jujutsu Kaisen</h3>
+    <p>Yuji Itadori se une a una escuela de hechicería para enfrentar maldiciones sobrenaturales tras albergar un espíritu maligno dentro de su cuerpo.</p>
+    <a class="btn" href="https://example.com/jujutsu-kaisen" target="_blank" rel="noopener noreferrer">Ver</a>
+  </div>
+</div>
+
   </section>
 
   <script>
-    const animes = Array.from(document.querySelectorAll('.anime-card'));
-    const searchInput = document.getElementById('search-input');
-    const searchForm = document.getElementById('search-form');
+    // Script para filtrar anime por título al enviar el formulario
+    const form = document.getElementById('search-form');
+    const input = document.getElementById('search-input');
+    const animeGrid = document.getElementById('anime-grid');
+    const animeCards = animeGrid.querySelectorAll('.anime-card');
 
-    searchForm.addEventListener('submit', function (e) {
+    form.addEventListener('submit', e => {
       e.preventDefault();
-      const query = searchInput.value.toLowerCase();
+      const query = input.value.trim().toLowerCase();
 
-      animes.forEach(card => {
+      animeCards.forEach(card => {
         const title = card.getAttribute('data-title').toLowerCase();
-        card.style.display = title.includes(query) ? 'block' : 'none';
+        if (query === '' || title.includes(query)) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
       });
     });
   </script>
+
 </body>
 </html>
-
