@@ -139,7 +139,7 @@
     <p>Descubre los animes más populares y comienza a verlos ahora.</p>
   </header>
 
-  <!-- Aquí está el formulario de búsqueda -->
+  <!-- Formulario de búsqueda -->
   <form id="search-form" aria-label="Buscar anime">
     <input id="search-input" type="text" placeholder="Buscar anime por título..." aria-label="Buscar anime" />
     <button id="search-btn" type="submit">Buscar</button>
@@ -180,7 +180,7 @@
 
       animeCards.forEach(card => {
         const title = card.getAttribute('data-title').toLowerCase();
-        if (title.includes(query)) {
+        if (query === '' || title.includes(query)) {
           card.style.display = '';
         } else {
           card.style.display = 'none';
