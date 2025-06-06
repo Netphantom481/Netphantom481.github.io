@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Aninet</title>
-  <meta name="description" content="Catálogo de anime con sinopsis y enlaces para ver series populares como Attack on Titan y Death Note.">
+  <title>Aninet - Catálogo de Anime</title>
+  <meta name="description" content="Explora un catálogo curado de series de anime populares, incluyendo sinopsis y enlaces para ver títulos como Attack on Titan y Death Note.">
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #121212;
-      color: white;
+      color: #ffffff;
     }
 
     header {
@@ -23,6 +23,12 @@
       margin: 0;
       font-size: 2.5em;
       color: #ff4081;
+    }
+
+    header p {
+      margin-top: 8px;
+      font-size: 1.2em;
+      color: #cccccc;
     }
 
     .anime-grid {
@@ -47,6 +53,7 @@
     .anime-card img {
       width: 100%;
       height: auto;
+      display: block;
     }
 
     .anime-card .info {
@@ -56,6 +63,12 @@
     .anime-card h3 {
       margin: 0 0 10px;
       color: #ff4081;
+      font-size: 1.4em;
+    }
+
+    .anime-card p {
+      font-size: 0.95em;
+      color: #dddddd;
     }
 
     .btn {
@@ -63,9 +76,10 @@
       padding: 10px 15px;
       margin-top: 10px;
       background-color: #ff4081;
-      color: white;
+      color: #ffffff;
       text-decoration: none;
       border-radius: 5px;
+      transition: background-color 0.2s;
     }
 
     .btn:hover {
@@ -77,30 +91,65 @@
 
   <header>
     <h1>Aninet</h1>
-    <p>Una página de anime.</p>
+    <p>Descubre los animes más populares y comienza a verlos ahora.</p>
   </header>
 
-  <section class="anime-grid">
+  <section class="anime-grid" id="anime-grid">
 
+    <!-- Contenido estático inicial -->
     <div class="anime-card">
-      <img src="https://static.wikia.nocookie.net/voiceacting/images/d/df/ShingekiNokyojin.jpg" alt="Attack on Titan">
+      <img src="https://static.wikia.nocookie.net/voiceacting/images/d/df/ShingekiNokyojin.jpg" alt="Póster de Attack on Titan">
       <div class="info">
         <h3>Attack on Titan</h3>
-        <p>En un mundo donde los humanos viven rodeados de muros para protegerse de los titanes gigantes.</p>
-        <a class="btn" href="https://example.com/aot" target="_blank">Ver</a>
+        <p>En un mundo postapocalíptico, la humanidad vive protegida por murallas gigantes para sobrevivir al ataque de enormes titanes devoradores de humanos.</p>
+        <a class="btn" href="https://example.com/aot" target="_blank" rel="noopener noreferrer">Ver</a>
       </div>
     </div>
 
     <div class="anime-card">
-      <img src="https://alfabetajuega.com/hero/2023/06/death-note-anime-suspenso.jpg?width=768&aspect_ratio=16:9&format=nowebp" alt="Death Note">
+      <img src="https://alfabetajuega.com/hero/2023/06/death-note-anime-suspenso.jpg?width=768&aspect_ratio=16:9&format=nowebp" alt="Póster de Death Note">
       <div class="info">
         <h3>Death Note</h3>
-        <p>Light Yagami encuentra una libreta que mata a cualquiera cuyo nombre sea escrito en ella...</p>
-        <a class="btn" href="https://example.com/death-note" target="_blank">Ver</a>
+        <p>Light Yagami, un estudiante brillante, descubre una libreta sobrenatural que le permite matar a cualquier persona con solo escribir su nombre en ella.</p>
+        <a class="btn" href="https://example.com/death-note" target="_blank" rel="noopener noreferrer">Ver</a>
       </div>
     </div>
 
   </section>
+
+  <script>
+    const container = document.getElementById("anime-grid");
+
+    async function cargarAnimes() {
+      try {
+        const respuesta = await fetch("https://api.jikan.moe/v4/top/anime?limit=8");
+        const datos = await respuesta.json();
+
+        datos.data.forEach(anime => {
+          const card = document.createElement("div");
+          card.className = "anime-card";
+
+          card.innerHTML = `
+            <img src="${anime.images.jpg.image_url}" alt="Póster de ${anime.title}">
+            <div class="info">
+              <h3>${anime.title}</h3>
+              <p>${anime.synopsis ? anime.synopsis.substring(0, 100) + '...' : "Sin sinopsis disponible."}</p>
+              <a class="btn" href="${anime.url}" target="_blank" rel="noopener noreferrer">Ver</a>
+            </div>
+          `;
+
+          container.appendChild(card);
+        });
+      } catch (error) {
+        const errorMsg = document.createElement("p");
+        errorMsg.textContent = "Error al cargar los animes. Intenta nuevamente más tarde.";
+        container.appendChild(errorMsg);
+        console.error("Error al cargar animes:", error);
+      }
+    }
+
+    cargarAnimes();
+  </script>
 
 </body>
 </html>
